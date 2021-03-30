@@ -13,13 +13,11 @@ services:
       - ./config/sql:/config/sql
       - ./docker/init-invidious-db.sh:/docker-entrypoint-initdb.d/01init-invidious-db.sh
     environment:
-      #- singledb.env
-      #- POSTGRES_USERS= "nextcloud:79ee2d65ff272f51abcfbe817cc58aac|kemal:FiW6BsQgxyUErPVgHB2p"
-      POSTGRES_USERS: "nextcloud:79ee2d65ff272f51abcfbe817cc58aac|kemal:kemal"
+      POSTGRES_USERS: "nextcloud:strong_password|kemal:more_stronger_password"
       #POSTGRES_DATABASES: "nextcloud:nextcloud|invidious:kemal"
       POSTGRES_DATABASES: "invidious:kemal|nextcloud:nextcloud"
       POSTGRES_DB: invidious
-      POSTGRES_PASSWORD: kemal
+      POSTGRES_PASSWORD: more_stronger_password
       POSTGRES_USER: kemal
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
@@ -46,8 +44,8 @@ services:
         feed_threads: 1
         db:
           user: kemal
-          #password: FiW6BsQgxyUErPVgHB2p
-          password: kemal
+          #password: more_stronger_password
+          password: more_stronger_password
           host: postgresdb
           port: 5432
           dbname: invidious
