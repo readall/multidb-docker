@@ -10,5 +10,5 @@ db:
 # database_url: postgres://kemal:kemal@localhost:5432/invidious
 full_refresh: false
 https_only: false
-domain: "tube.sensely.tk"
+domain: "tube.junk.tk"
 
